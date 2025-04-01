@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--
+source:C:\Users\Admin\Documents\personal-project\coldfusion\fw1\model\beans\restaurants.cfc
+compilation-time:{ts '2025-04-03 11:21:22'}
+datasource:fw1
+-->
+<class entity-name="Restaurant" lazy="true" node="root...model.beans.restaurants" table="restaurants">
+<id name="id" type="integer">
+<column name="id"/>
+<generator class="native"/>
+</id>
+<property name="name" type="string">
+<column length="255" name="name"/>
+</property>
+<property name="location" type="text">
+<column name="location"/>
+</property>
+<property name="contact" type="text">
+<column name="contact"/>
+</property>
+<property name="opening_closing_time" type="string">
+<column length="255" name="opening_closing_time"/>
+</property>
+<property name="details" type="text">
+<column name="details"/>
+</property>
+<property name="created" type="timestamp">
+<column name="created"/>
+</property>
+<property name="edited" type="timestamp">
+<column name="edited"/>
+</property>
+<many-to-one column="userId" entity-name="user" name="user"/>
+</class>
+</hibernate-mapping>

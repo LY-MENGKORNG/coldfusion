@@ -1,0 +1,14 @@
+{
+	"adminPassword": "${adminPassword}",
+	"nullSupport": "true",
+	"adminAccessRead": "close",
+	"adminAccessWrite": "close",
+	"CGIReadOnly": "true",
+	"clientCookies": "false",
+	"clientManagement": "false",
+	"debuggingEnabled": "no",
+	"inspectTemplate": "once",
+	"sessionManagement": "false",
+	"timeServer": "pool.ntp.org",
+	"useTimeServer": "true"
+}

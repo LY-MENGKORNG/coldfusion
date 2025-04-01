@@ -1,0 +1,543 @@
+/***
+This file will be used for shared global class.
+For example card-wrapper class is used in almost every card containing a form.
+It's important to centralize it.
+
+<!> Don't add custom scoped class which has to be used in a component direclty - with scoped <!>
+***/
+
+/* hide scroll on app */
+.relative {
+  position: relative;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.w-108 {
+  width: 108px !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+html {
+  overflow-y: auto;
+}
+
+.v-application .text-capitalize,
+label.v-label,
+span.v-btn__content,
+div.v-messages__message {
+  /* follow figma, so i will comment this style */
+  /* text-transform: lowercase !important; */
+  display: inline-block;
+}
+
+span.v-btn__content::first-letter,
+.text-capitalize::first-letter,
+label.v-label::first-letter,
+div.v-messages__message::first-letter {
+  /* text-transform: uppercase !important; */
+  text-transform: uppercase !important;
+}
+
+/* new css class to capitalize text */
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase;
+}
+
+.v-application--wrap {
+  background-color: var(--v-surface-base);
+}
+
+label.v-label.theme--dark.error--text {
+  color: white !important;
+}
+
+.v-text-field__slot input {
+  caret-color: auto;
+}
+
+/* Custom style scroll  */
+// ref: https://stackoverflow.com/questions/44334106/how-can-i-style-horizontal-scrollbar-by-css
+::-webkit-scrollbar {
+  width: 8px; /* width of vertical scrollbar */
+  height: 8px; /* height of horizontal scrollbar */
+}
+
+/* Style webkit scrollbar on certain state */
+// ref: https://stackoverflow.com/questions/8632410/style-webkit-scrollbar-on-certain-state
+::-webkit-scrollbar-thumb:hover {
+  background: var(--v-primary-base);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--v-surface-lighten5);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--v-primary-lighten1);
+}
+
+.ellipsis-text-400 {
+  text-overflow: ellipsis;
+  max-width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+fieldset legend {
+  width: 0 !important;
+}
+
+.v-text-field__slot .v-label,
+.v-select__slot .v-label {
+  top: -4px !important;
+  left: -12px !important;
+}
+
+.appended-icon .v-text-field__slot .v-label {
+  left: -40px !important;
+}
+
+.v-input--is-disabled fieldset {
+  border-style: dotted !important;
+  border-width: 2px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.bread-crumb-link {
+  cursor: pointer;
+  color: var(--v-info-base);
+  /* add position because some of pages that use row as content it override some path of bread-crumb */
+  position: relative;
+}
+
+/* Custom lable, text color to black for all field disabled when view page */
+.v-label--is-disabled,
+input[disabled='disabled'],
+textarea[disabled='disabled'],
+.theme--light.v-select .v-select__selection--disabled,
+.v-input--is-disabled .v-input__control .v-input__slot .v-label.theme--light,
+.theme--light.v-input--is-disabled
+  .v-input__control
+  .v-input__slot
+  .v-select__slot
+  .v-select__selections {
+  color: var(--v-neutral-darken4) !important;
+}
+
+/* Custom style dropdown to balck when view page */
+::v-deep .v-input__control .v-input__slot .v-select__selections,
+::v-deep
+  .v-input__control
+  .v-input__slot
+  .v-select__selections
+  .v-chip.v-chip--disabled
+  .v-chip__content {
+  color: var(--v-neutral-darken4) !important;
+  opacity: 0.87 !important;
+}
+
+/* Custom color switcher when disable */
+::v-deep
+  .switch-wrapper
+  .v-input--is-label-active.v-input--is-dirty
+  .v-input__control
+  .v-input__slot
+  .v-label--is-disabled {
+  color: var(--v-neutral-darken4) !important;
+}
+
+/* Custom style v-chip when disabled */
+.v-chip--select.v-chip.v-chip--disabled.v-chip--no-color.theme--light.v-size--small {
+  color: var(--v-neutral-darken4) !important;
+  opacity: revert !important;
+}
+
+/* Set opacity on field form */
+::v-deep
+  .v-input--is-disabled
+  .v-input__control
+  .v-input__slot
+  .v-label--is-disabled {
+  color: var(--v-neutral-lighten1) !important;
+  opacity: 0.87 !important;
+}
+
+/* Custom style text field to black when view pages */
+::v-deep .v-input__control .v-input__slot .v-text-field__slot input {
+  color: var(--v-neutral-darken4) !important;
+  opacity: 0.87 !important;
+}
+
+/* Custom style import button */
+::v-deep .partner-import .v-input__control .v-input__slot fieldset {
+  color: var(--v-secondary-base) !important;
+}
+
+/* Custom style add button disable when view pages */
+::v-deep
+  button.mr-8.v-btn.v-btn--disabled.v-btn--outlined.theme--light.v-size--small {
+  color: var(--v-neutral-lighten1) !important;
+  border: 2px dotted !important;
+}
+
+.v-sheet.v-stepper:not(.v-sheet--outlined) {
+  box-shadow: none;
+}
+
+.theme--light.v-stepper {
+  background: none;
+}
+
+.v-stepper__header {
+  box-shadow: none !important;
+}
+
+.v-stepper__step--complete >>> .primary {
+  background-color: var(--v-green-base) !important;
+}
+
+.v-stepper__step >>> .v-stepper__label {
+  white-space: nowrap;
+}
+
+.v-stepper__step >>> .v-stepper__label::first-letter {
+  text-transform: uppercase;
+}
+.theme--light.v-stepper .v-stepper__step--inactive .v-stepper__label {
+  display: flex !important;
+  text-align: center !important;
+}
+
+span.v-stepper__step__step.primary {
+  background-color: var(--v-accent-base) !important;
+}
+
+/* Custom disable button */
+.theme--dark.v-btn.v-btn--disabled.v-btn--has-bg {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.h-40 {
+  height: 40px;
+}
+
+.price {
+  font-size: 20px;
+  color: var(--v-secondary-base);
+}
+
+.card-wrapper {
+  padding: 20px 30px 0 30px;
+}
+
+/* filters on table */
+
+.filter-btn.active {
+  background-color: rgba(229, 89, 19, 0.06) !important;
+  color: var(--v-secondary-base);
+  border: 1px solid var(--v-secondary-base);
+}
+
+.filter-wrapper {
+  background-color: #fef5f1 !important;
+  margin-top: 12px;
+}
+
+/* datatable header */
+
+.datatable-header {
+  height: 64px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 16px 0 16px;
+}
+
+/* Common breadcrumb */
+.breadcrumb {
+  padding: 0 !important;
+
+  li {
+    a {
+      display: inline;
+      color: var(--v-info-base);
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    div {
+      display: inline;
+      color: var(--v-neutral-base);
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Custom color checkbox following UI design color */
+.mdi-checkbox-marked::before {
+  color: var(--v-accent-base);
+}
+.mdi-minus-box::before {
+  color: var(--v-primary-darken4);
+}
+.v-input--is-disabled .mdi-checkbox-marked::before {
+  color: var(--v-neutral-lighten1);
+}
+
+.v-select.v-input--dense .v-chip {
+  margin: 3px 4px !important;
+}
+
+/**
+* adds an asterisk to the start of a required label,
+* capitalizes the first letter of the label,
+* and gives the asterisk a red color.
+*/
+.required label,
+.required.label {
+  position: relative;
+  padding-left: 16px;
+
+  &::after {
+    content: '*';
+    color: var(--v-error-base) !important;
+    position: absolute;
+    left: 0px;
+  }
+
+  &:first-letter {
+    display: inline-flex !important;
+    text-transform: uppercase;
+  }
+}
+
+/* capitailzie value of text field */
+.value-uppercase .v-input__control .v-text-field__slot input {
+  text-transform: uppercase;
+}
+
+/* custom border and color text on warning button */
+.cancel-btn.btn-warning {
+  border: 1px solid var(--v-warning-base);
+  color: var(--v-warning-base);
+}
+
+/* Custom style for expansion-panel */
+.v-expansion-panel::before {
+  box-shadow: none !important;
+}
+.v-expansion-panel--active.border-secondary {
+  border: 1px solid var(--v-secondary-base);
+}
+.v-expansion-panel--active.border-accent {
+  border: 1px solid var(--v-accent-base);
+}
+.v-expansion-panel--active.border-primary {
+  border: 1px solid var(--v-primary-base);
+}
+.v-expansion-panel.border-natural {
+  box-shadow: 0px 0px 0px 1px var(--v-neutral-lighten3) !important;
+}
+
+// Custom the default header (Close) v-expansion-panel-header styles when not
+button.v-expansion-panel-header.section-panel-header.secondary {
+  box-shadow: 0px 0px 0px 1px var(--v-secondary-base);
+  border-color: var(--v-secondary-base) !important;
+}
+button.v-expansion-panel-header.section-panel-header.accent {
+  box-shadow: 0px 0px 0px 1px var(--v-accent-base);
+  border-color: var(--v-accent-base) !important;
+}
+button.v-expansion-panel-header.section-panel-header.primary {
+  box-shadow: 0px 0px 0px 1px var(--v-primary-base);
+  border-color: var(--v-primary-base) !important;
+}
+.theme--light.v-expansion-panels .v-expansion-panel:not(:first-child)::after {
+  border-color: transparent !important;
+}
+
+// Custom the default header (Open) border of v-expansion-panel-header
+button.section-panel-header.v-expansion-panel-header--active {
+  border-bottom: 1px solid var(--v-neutral-lighten3) !important;
+}
+
+/* Already $expansion-panel-border-radius: 10px; in variable.scss
+So need to override the default Vuetify style of .v-expansion-panel-header
+ to that inherited border radius from expansion-panel as below: */
+.v-expansion-panel--active .v-expansion-panel-header {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  line-height: 1 !important;
+}
+/* Need to override min-height, font style of v-expansion-panel-header follow figma  */
+.section-panel-header {
+  min-height: 47px !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Custom style for tabs */
+.v-tabs .v-tabs-bar {
+  background-color: transparent !important;
+}
+.v-tabs .v-tabs-slider {
+  background-color: var(--v-secondary-base) !important;
+}
+.v-tab {
+  text-transform: none !important;
+  border-bottom: 2px solid var(--v-neutral-base) !important;
+  font-size: 16px !important;
+}
+.v-tab--active {
+  font-weight: bold !important;
+  color: var(--v-secondary-base) !important;
+}
+.validation-modal .v-toolbar__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* set fix width to nav tab left to 256px */
+.nav-tab {
+  width: 256px !important;
+}
+.nav-tab .v-list-item__title {
+  font-size: 14px !important;
+}
+.nav-tab .v-list-item {
+  border-bottom: 1px solid var(--v-neutral-lighten3);
+}
+.nav-tab .v-list-item:last-child {
+  border-bottom: none;
+}
+.content-right-side {
+  width: 100%;
+  border-left: 1px solid var(--v-neutral-lighten3);
+}
+
+/* custom stepper style */
+.v-stepper {
+  background: transparent !important;
+}
+.v-stepper--alt-labels .v-stepper__step {
+  flex-basis: unset !important;
+}
+.v-stepper--alt-labels .v-stepper__header .v-divider {
+  margin: 36px -88px -1px !important;
+}
+.v-input--radio-group--column .v-input--radio-group__input {
+  flex-direction: row !important;
+  text-transform: capitalize;
+}
+.alphabetical-prefix .v-input--radio-group__input {
+  flex-direction: column !important;
+}
+.card-amount {
+  border-radius: 8px;
+  height: 100%;
+}
+.card-amount .card-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.card-amount .total-price {
+  margin-bottom: 0;
+  font-size: 34px;
+  color: var(--v-secondary-base);
+}
+
+/* Custom label radio group */
+.v-input--radio-group--column .v-input--radio-group__input {
+  text-transform: lowercase;
+}
+/* Custom selected radio group color */
+i.v-icon.notranslate.mdi.mdi-radiobox-marked.theme--light.primary--text {
+  color: var(--v-accent-base) !important;
+}
+
+// Customer header
+.v-application .text-h6 {
+  font-weight: bold;
+}
+.text-subtitle-3 {
+  font-size: 0.8125rem; //13px is equal to 0.8125rem if the base font size is 16px.
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0071428571em;
+}
+.v-card__title {
+  font-size: 1rem;
+}
+
+/* Hide border data table for the left side item list */
+.theme--light.v-data-table.item-lists
+  > .v-data-table__wrapper
+  > table
+  > tbody
+  > tr:not(:last-child)
+  > td:not(.v-data-table__mobile-row) {
+  border-bottom: none !important;
+}
+
+/* Custom border for the right side list */
+.list-data {
+  border-left: 1px solid var(--v-neutral-lighten3);
+}
+
+/* Set style for pencil icon when mouser over */
+.mdi.mdi-pencil:hover::before {
+  color: var(--v-accent-base);
+}
+
+/* Remove color of bottom item list left sie */
+.theme--light.v-data-table.item-lists > .v-data-table__wrapper {
+  overflow-x: hidden !important;
+}
+
+/* Set cursop when mouse over on row data table of the left side item */
+.theme--light.v-data-table tbody tr :hover {
+  cursor: pointer;
+}
+
+/* Keeps icon button content from resizing. */
+.v-btn--icon .v-btn__content {
+  flex: none !important;
+}
+
+/* Set position of custom clear button. */
+.custom-clear-button {
+  position: absolute;
+  right: 1rem;
+  transform: translateX(50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0; /* Initially hide the button */
+  transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+.custom-icon-num-field:hover .custom-clear-button {
+  opacity: 1; /* Show button on hover */
+}

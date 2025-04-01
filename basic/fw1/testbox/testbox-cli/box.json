@@ -1,0 +1,49 @@
+{
+    "name":"TestBox CLI",
+    "version":"1.6.0+23",
+    "location":"https://downloads.ortussolutions.com/ortussolutions/commandbox-modules/testbox-cli/1.6.0/testbox-cli-1.6.0.zip",
+    "slug":"testbox-cli",
+    "author":"Ortus Solutions, Corp",
+    "homepage":"https://www.forgebox.io/view/testbox-cli",
+    "documentation":"https://github.com/Ortus-Solutions/testbox-cli/wiki",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/Ortus-Solutions/testbox-cli"
+    },
+    "bugs":"https://github.com/Ortus-Solutions/testbox-cli/issues",
+    "shortDescription":"The TestBox CLI will assist you with running, reporting and generating tests",
+    "type":"commandbox-modules",
+    "keywords":[],
+    "license":[
+        {
+            "type":"Apache2",
+            "url":"http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "contributors":[],
+    "devDependencies":{
+        "commandbox-cfformat":"*",
+        "commandbox-docbox":"*"
+    },
+    "dependencies":{
+        "testbox":"*"
+    },
+    "installPaths":{
+        "testbox":"testbox/"
+    },
+    "ignore":[
+        "**/.*",
+        "build/*",
+        "./tests/**",
+        "./tmp/**"
+    ],
+    "scripts":{
+        "build:module":"task run taskFile=build/Build.cfc :projectName=`package show slug` :version=`package show version`",
+        "build:docs":"task run taskFile=build/Build.cfc target=docs :projectName=`package show slug` :version=`package show version`",
+        "format":"cfformat run commands,build,models,ModuleConfig.cfc ./.cfformat.json --overwrite",
+        "format:watch":"cfformat watch commands,build,models,ModuleConfig.cfc ./.cfformat.json",
+        "format:check":"cfformat check commands,build,models,ModuleConfig.cfc ./.cfformat.json",
+        "release":"recipe build/release.boxr",
+        "setupTemplate":"task run taskFile=build/SetupTemplate.cfc"
+    }
+}

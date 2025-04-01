@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--
+source:C:\Users\Admin\Documents\personal-project\coldfusion\fw1\model\beans\user.cfc
+compilation-time:{ts '2025-04-03 11:21:22'}
+datasource:fw1
+-->
+<class entity-name="user" lazy="true" node="root...model.beans.user" table="users">
+<id name="id" type="integer">
+<column name="id"/>
+<generator class="native"/>
+</id>
+<property name="username" type="string">
+<column length="50" name="username" not-null="true" unique="true"/>
+</property>
+<property name="email" type="string">
+<column length="255" name="email" not-null="true" unique="true"/>
+</property>
+<property name="passwordHash" type="string">
+<column length="255" name="passwordHash" not-null="true"/>
+</property>
+<property name="passwordSalt" type="string">
+<column length="255" name="passwordSalt"/>
+</property>
+<property name="failedLoginAttempts" type="integer">
+<column name="failedLoginAttempts"/>
+</property>
+<property name="lastLogin" type="timestamp">
+<column name="lastLogin"/>
+</property>
+<property name="createdAt" type="timestamp">
+<column name="createdAt"/>
+</property>
+<property name="updatedAt" type="timestamp">
+<column name="updatedAt"/>
+</property>
+<many-to-one column="roleId" entity-name="Role" name="roleId" not-null="true"/>
+<bag name="sessions">
+<key column="userId"/>
+<one-to-many entity-name="Session"/>
+</bag>
+</class>
+</hibernate-mapping>

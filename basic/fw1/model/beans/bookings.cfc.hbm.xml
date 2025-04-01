@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--
+source:C:\Users\Admin\Documents\personal-project\coldfusion\fw1\model\beans\bookings.cfc
+compilation-time:{ts '2025-04-03 11:21:22'}
+datasource:fw1
+-->
+<class entity-name="bookings" lazy="true" node="root...model.beans.bookings" table="bookings">
+<id name="id" type="integer">
+<column name="id"/>
+<generator class="native"/>
+</id>
+<property name="name" type="string">
+<column length="255" name="name"/>
+</property>
+<property name="date" type="timestamp">
+<column name="`date`"/>
+</property>
+<property name="time" type="timestamp">
+<column name="`time`"/>
+</property>
+<property name="created" type="timestamp">
+<column name="created"/>
+</property>
+<property name="edited" type="timestamp">
+<column name="edited"/>
+</property>
+<many-to-one column="customerId" entity-name="user" name="customer"/>
+<many-to-one column="ownerId" entity-name="user" name="owner"/>
+</class>
+</hibernate-mapping>

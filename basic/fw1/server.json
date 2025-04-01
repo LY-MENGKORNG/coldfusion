@@ -1,0 +1,14 @@
+{
+	"name": "fw1",
+	"openBrowser": "${openBrowser}",
+	"openBrowserURL": "http://localhost:90/index.cfm/api",
+	"app": {
+		"cfengine": "lucee@5"
+	},
+	"web": {
+		"host": "${host}",
+		"http": {
+			"port": "${httpPort}"
+		}
+	}
+}

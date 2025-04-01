@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--
+source:C:\Users\Admin\Documents\personal-project\coldfusion\fw1\model\beans\sessions.cfc
+compilation-time:{ts '2025-04-03 11:21:22'}
+datasource:fw1
+-->
+<class entity-name="Session" lazy="true" node="root...model.beans.sessions" table="sessions">
+<id name="id" type="integer">
+<column name="id"/>
+<generator class="native"/>
+</id>
+<property name="sessionToken" type="string">
+<column length="255" name="sessionToken" not-null="true" unique="true"/>
+</property>
+<property name="ipAddress" type="string">
+<column length="45" name="ipAddress"/>
+</property>
+<property name="userAgent" type="string">
+<column length="255" name="userAgent"/>
+</property>
+<property name="createdAt" type="timestamp">
+<column name="createdAt"/>
+</property>
+<property name="expiresAt" type="timestamp">
+<column name="expiresAt"/>
+</property>
+<many-to-one column="userId" entity-name="user" name="userId" not-null="true"/>
+</class>
+</hibernate-mapping>
